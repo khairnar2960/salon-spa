@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Card</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		body {
+			background-color: #000;
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: auto;
+			min-height: 100vh;
+		}
+		.pricing-card {
+			min-width: 300px;
+			padding: 1rem;
+			border-radius: 0.5rem;
+		}
+		.pricing-card > ul {
+			height: 100%;
+			max-height: 120px;
+			overflow-y: hidden;
+			transition: all 0.3s ease-in-out;
+		}
+		.pricing-card.expand > ul {
+			height: 100%;
+			max-height: none;
+			overflow-y: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="pricing-card border">
+		<ul class="">
+			<li>Element</li>
+			<li>Element</li>
+			<li>Element</li>
+			<li>Element</li>
+			<li>Element</li>
+			<li>Element</li>
+			<li>Element</li>
+			<li>Element</li>
+			<li>Element</li>
+			<li>Element</li>
+		</ul>
+		<button class="pricing-toggle btn btn-primary">View All</button>
+	</div>
+
+	<script>
+		document.querySelector('.pricing-toggle')
+		.addEventListener('click', function() {
+			// let pricingCard = this.closest('.pricing-card');
+			// if (pricingCard) {
+			// 	pricingCard.classList.toggle('expand');
+			// }
+			this.closest('.pricing-card')?.classList.toggle('expand');
+		});
+	</script>
+</body>
+</html>
